@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Öğrenme Yolculuğu — Ders İngilizce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body class="is-yolculuk-mode">
+    <div class="bg-blob bg-blob-1" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-2" aria-hidden="true"></div>
+    <div class="bg-blob bg-blob-3" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="nav-start">
+          <a class="brand" href="/"><img class="brand-mark" src="/logo-mark.png" width="36" height="36" alt="" /><span class="brand-text">Ders İngilizce</span></a>
+          <div class="nav-crumb">
+            <a class="nav-back" id="back-link" href="/sinif.html">
+              <svg class="nav-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Geri</span>
+            </a>
+            <span class="nav-grade" id="page-kicker">Yolculuk</span>
+          </div>
+        </div>
+        <button class="nav-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+          <a href="/">Ana Sayfa</a>
+          <a href="/#siniflar">Sınıflar</a>
+          <a href="/hakkinda.html">Hakkında</a>
+          <a href="/iletisim.html">İletişim</a>
+          <a href="/gizlilik.html">Gizlilik</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="shell page-shell yolculuk-shell">
+      <header class="page-hero page-hero-compact">
+        <h1 id="page-title">Öğrenme Yolculuğu</h1>
+        <p class="lead" id="page-lead">Adım adım ilerle.</p>
+      </header>
+
+      <div id="status" class="status-box">Yükleniyor…</div>
+      <div id="yolculuk-root" hidden></div>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script type="module" src="/src/yolculuk.js"></script>
+  </body>
+</html>

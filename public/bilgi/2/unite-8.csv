@@ -1,0 +1,53 @@
+"""Bird"" kelimesinin Türkçe karşılığı nedir?",Kuş
+"""Cat"" kelimesinin Türkçe karşılığı nedir?",Kedi
+"""Dog"" kelimesinin Türkçe karşılığı nedir?",Köpek
+"""Fish"" kelimesinin Türkçe karşılığı nedir?",Balık
+"""Frog"" kelimesinin Türkçe karşılığı nedir?",Kurbağa
+"""Parrot"" kelimesinin Türkçe karşılığı nedir?",Papağan
+"""Rabbit"" kelimesinin Türkçe karşılığı nedir?",Tavşan
+"""Turtle"" kelimesinin Türkçe karşılığı nedir?",Kaplumbağa
+"""Aquarium"" kelimesinin Türkçe karşılığı nedir?",Akvaryum
+"""Basket"" kelimesinin Türkçe karşılığı nedir?",Sepet
+"""Box"" kelimesinin Türkçe karşılığı nedir?",Kutu
+"""Bin"" kelimesinin Türkçe karşılığı nedir?",Çöp kutusu
+"""Car"" kelimesinin Türkçe karşılığı nedir?",Araba
+"""Stone"" kelimesinin Türkçe karşılığı nedir?",Taş
+"""Table"" kelimesinin Türkçe karşılığı nedir?",Masa
+"""Tree"" kelimesinin Türkçe karşılığı nedir?",Ağaç
+"""Where?"" sorusunun Türkçe anlamı nedir?",Nerede?
+"""In"" kelimesinin Türkçe karşılığı nedir?",İçinde
+"""On"" kelimesinin Türkçe karşılığı nedir?",Üstünde
+"""Under"" kelimesinin Türkçe karşılığı nedir?",Altında
+"""Kuş"" kelimesinin İngilizce karşılığı nedir?",Bird
+"""Kedi"" kelimesinin İngilizce karşılığı nedir?",Cat
+"""Köpek"" kelimesinin İngilizce karşılığı nedir?",Dog
+"""Balık"" kelimesinin İngilizce karşılığı nedir?",Fish
+"""Kurbağa"" kelimesinin İngilizce karşılığı nedir?",Frog
+"""Papağan"" kelimesinin İngilizce karşılığı nedir?",Parrot
+"""Tavşan"" kelimesinin İngilizce karşılığı nedir?",Rabbit
+"""Kaplumbağa"" kelimesinin İngilizce karşılığı nedir?",Turtle
+"""Akvaryum"" kelimesinin İngilizce karşılığı nedir?",Aquarium
+"""Sepet"" kelimesinin İngilizce karşılığı nedir?",Basket
+"""Kutu"" kelimesinin İngilizce karşılığı nedir?",Box
+"""Çöp kutusu"" kelimesinin İngilizce karşılığı nedir?",Bin
+"""Araba"" kelimesinin İngilizce karşılığı nedir?",Car
+"""Taş"" kelimesinin İngilizce karşılığı nedir?",Stone
+"""Masa"" kelimesinin İngilizce karşılığı nedir?",Table
+"""Ağaç"" kelimesinin İngilizce karşılığı nedir?",Tree
+"""Nerede?"" sorusunun İngilizce karşılığı nedir?",Where?
+"""İçinde"" anlamına gelen İngilizce edat nedir?",In
+"""Üstünde"" anlamına gelen İngilizce edat nedir?",On
+"""Altında"" anlamına gelen İngilizce edat nedir?",Under
+Bir şeyin ya da bir kişinin nerede olduğunu sormak için kullanılan soru kalıbı nedir?,Where?
+"""The cat is _____ the box."" cümlesinde kedi kutunun üstündeyse hangi kelime gelmelidir?",on
+"""Where is the cat?"" cümlesinin Türkçe karşılığı nedir?",Kedi nerede?
+"""The cat is on the box."" cümlesinin Türkçe karşılığı nedir?",Kedi kutunun üstünde.
+"""Where are the rabbits?"" cümlesinin Türkçe karşılığı nedir?",Tavşanlar nerede?
+"""Ağacın altında"" ifadesinin İngilizce karşılığı nedir?",Under the tree
+Yer bildiren sorularda soruyu cevaplamak için kullanılan üç temel ifade hangileridir?,"In, on, under"
+Cloze: The fish is _____ the aquarium.,in
+Cloze: The bird is _____ the tree.,on
+Cloze: The dog is _____ the table.,under
+Cloze: The rabbit is _____ the basket.,in
+Cloze: The turtle is _____ the stone.,on
+"Unit 8 başlığı olan ""Pets"" kelimesinin Türkçe karşılığı nedir?",Evcil Hayvanlar

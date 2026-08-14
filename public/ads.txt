@@ -1,0 +1,2 @@
+# Google AdSense — onay sonrası ca-pub-XXXXXXXXXXXXXXXX değerini güncelleyin.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

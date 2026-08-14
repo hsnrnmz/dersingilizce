@@ -1,0 +1,31 @@
+﻿Question,Answer
+North ne demektir?,Kuzey
+South ne demektir?,Güney
+East ne demektir?,Doğu
+West ne demektir?,Batı
+"""Where is ...?"" ne demektir?",Nerede?
+"""It is in the north."" ne demektir?",Kuzeydedir.
+"""It is in the south."" ne demektir?",Güneydedir.
+"""It is in the east."" ne demektir?",Doğudadır.
+"""It is in the west."" ne demektir?",Batıdadır.
+İzmir Türkiye'nin hangi yönündedir?,Batısında
+Van Türkiye'nin hangi yönündedir?,Doğusunda
+Adana Türkiye'nin hangi yönündedir?,Güneyinde
+Trabzon Türkiye'nin hangi yönündedir?,Kuzeyinde
+"""Where are you from?"" ne demektir?",Nerelisin?
+"""I am from Iraq."" ne demektir?",Iraklıyım / Irak'tanım.
+"""I am Iraqi."" ne demektir?",Iraklıyım.
+"""Where is she from?"" ne demektir?",O nereli?
+"""She is from Japan."" ne demektir?",O Japonya'dandır.
+"""Where do you live?"" ne demektir?",Nerede yaşıyorsun?
+"""I live in Germany."" ne demektir?",Almanya'da yaşıyorum.
+"""What is your nationality?"" ne demektir?",Milliyetin nedir?
+"""I am American."" ne demektir?",Amerikalıyım.
+Bir yerin kuzeyde olduğunu söylerken hangi kalıp kullanılır?,It is in the north.
+Bir yerin güneyde olduğunu söylerken hangi kalıp kullanılır?,It is in the south.
+Bir yerin doğuda olduğunu söylerken hangi kalıp kullanılır?,It is in the east.
+Bir yerin batıda olduğunu söylerken hangi kalıp kullanılır?,It is in the west.
+Kuzeyin İngilizcesi nedir?,North
+Güneyin İngilizcesi nedir?,South
+Doğunun İngilizcesi nedir?,East
+Batının İngilizcesi nedir?,West

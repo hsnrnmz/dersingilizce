@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Ders İngilizce">
+  <rect width="512" height="512" rx="112" fill="#4c1d95"/>
+  <text
+    x="256"
+    y="292"
+    text-anchor="middle"
+    font-family="Nunito, Arial Black, Arial, sans-serif"
+    font-size="220"
+    font-weight="900"
+    fill="#ffffff"
+    letter-spacing="-8"
+  >DI</text>
+</svg>

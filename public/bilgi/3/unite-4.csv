@@ -1,0 +1,31 @@
+﻿Question,Answer
+Dancing ne demektir?,Dans etmek
+Cooking ne demektir?,Yemek yapmak
+Running ne demektir?,Koşmak
+Painting ne demektir?,Resim yapmak
+Swimming ne demektir?,Yüzmek
+Singing ne demektir?,Şarkı söylemek
+Drawing ne demektir?,Çizim yapmak
+Driving ne demektir?,Araç sürmek
+Flying a kite ne demektir?,Uçurtma uçurmak
+Riding a bike ne demektir?,Bisiklete binmek
+Watching TV ne demektir?,Televizyon izlemek
+Reading a book ne demektir?,Kitap okumak
+Playing tennis ne demektir?,Tenis oynamak
+Playing chess ne demektir?,Satranç oynamak
+Playing basketball ne demektir?,Basketbol oynamak
+Listening to music ne demektir?,Müzik dinlemek
+"""Do you like ... ?"" ne demektir?",... yapmayı sever misin?
+"""Do you like swimming?"" ne demektir?",Yüzmeyi sever misin?
+"""Yes, I do."" ne demektir?",Evet severim.
+"""No, I don't."" ne demektir?",Hayır sevmem.
+"""What do you like doing?"" ne demektir?",Ne yapmayı seversin?
+"""I like painting."" ne demektir?",Resim yapmayı severim.
+"""I love playing chess."" ne demektir?",Satranç oynamayı çok severim.
+"""I don't like swimming."" ne demektir?",Yüzmeyi sevmem.
+"""Pardon me?"" ne demektir?",Efendim?
+"""Slowly, please."" ne demektir?",Yavaşça lütfen.
+"""Say that again, please."" ne demektir?",Lütfen tekrar söyle.
+Sevdiğimiz aktiviteleri anlatırken hangi kalıp kullanılır?,I like ...
+Çok sevdiğimiz aktiviteleri anlatırken hangi kalıp kullanılır?,I love ...
+Sevmediğimiz aktiviteleri anlatırken hangi kalıp kullanılır?,I don't like ...

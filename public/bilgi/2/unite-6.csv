@@ -1,0 +1,55 @@
+"""Chess"" kelimesinin Türkçe karşılığı nedir?",Satranç
+"""Dance"" kelimesinin Türkçe karşılığı nedir?",Dans etmek
+"""Fly a kite"" ifadesinin Türkçe karşılığı nedir?",Uçurtma uçurmak
+"""Jump"" kelimesinin Türkçe karşılığı nedir?",Zıplamak
+"""Kick a ball"" ifadesinin Türkçe karşılığı nedir?",Topa vurmak
+"""Play hide and seek"" ifadesinin Türkçe karşılığı nedir?",Saklambaç oynamak
+"""Play tennis"" ifadesinin Türkçe karşılığı nedir?",Tenis oynamak
+"""Playground"" kelimesinin Türkçe karşılığı nedir?",Oyun parkı
+"""Ride a bike"" ifadesinin Türkçe karşılığı nedir?",Bisiklete binmek
+"""Run"" kelimesinin Türkçe karşılığı nedir?",Koşmak
+"""Sing"" kelimesinin Türkçe karşılığı nedir?",Şarkı söylemek
+"""Skip rope"" ifadesinin Türkçe karşılığı nedir?",İp atlamak
+"""Slide"" kelimesinin Türkçe karşılığı nedir?",Kaydıraktan kaymak
+"""Swing"" kelimesinin Türkçe karşılığı nedir?",Salıncakta sallanmak
+"""Walk"" kelimesinin Türkçe karşılığı nedir?",Yürümek
+"""Satranç"" kelimesinin İngilizce karşılığı nedir?",Chess
+"""Dans etmek"" eyleminin İngilizce karşılığı nedir?",Dance
+"""Uçurtma uçurmak"" ifadesinin İngilizce karşılığı nedir?",Fly a kite
+"""Zıplamak"" eyleminin İngilizce karşılığı nedir?",Jump
+"""Topa vurmak"" eyleminin İngilizce karşılığı nedir?",Kick a ball
+"""Saklambaç oynamak"" ifadesinin İngilizce karşılığı nedir?",Play hide and seek
+"""Tenis oynamak"" ifadesinin İngilizce karşılığı nedir?",Play tennis
+"""Oyun parkı"" kelimesinin İngilizce karşılığı nedir?",Playground
+"""Bisiklete binmek"" eyleminin İngilizce karşılığı nedir?",Ride a bike
+"""Koşmak"" eyleminin İngilizce karşılığı nedir?",Run
+"""Şarkı söylemek"" eyleminin İngilizce karşılığı nedir?",Sing
+"""İp atlamak"" eyleminin İngilizce karşılığı nedir?",Skip rope
+"""Kaydıraktan kaymak"" eyleminin İngilizce karşılığı nedir?",Slide
+"""Salıncakta sallanmak"" eyleminin İngilizce karşılığı nedir?",Swing
+"""Yürümek"" eyleminin İngilizce karşılığı nedir?",Walk
+"""Haydi"" anlamına gelen İngilizce ifade nedir?",Let's
+"""Uçurtma uçurmak"" eylemi için kullanılan kalıp: ""Fly a _____""",kite
+"""İp atlamak"" eylemi için kullanılan kalıp: ""_____ rope""",Skip
+"""Saklambaç oynamak"" eylemi için kullanılan kalıp: ""Play _____ and seek""",hide
+"""Topa vurmak"" eylemi için kullanılan kalıp: ""_____ a ball""",Kick
+"""Bisiklete binmek"" eylemi için kullanılan kalıp: ""Ride a _____""",bike
+"""Let's play football"" cümlesinin Türkçe anlamı nedir?",Haydi futbol oynayalım.
+"""Let's fly a kite"" cümlesinin Türkçe anlamı nedir?",Haydi uçurtma uçuralım.
+"""Haydi futbol oynayalım"" cümlesinin İngilizce karşılığı nedir?",Let's play football.
+"""Haydi uçurtma uçuralım"" cümlesinin İngilizce karşılığı nedir?",Let's fly a kite.
+Karşımızdaki kişiye bir eylemi yapıp yapmadığını sormak için hangi yardımcı fiil ile söze başlanır?,Do
+"""Do you sing?"" sorusunun Türkçe anlamı nedir?",Şarkı söyler misin?
+"""Şarkı söyler misin?"" sorusunun İngilizce karşılığı nedir?",Do you sing?
+"""Do you...?"" sorusuna verilen ""Evet, yaparım"" anlamındaki cevap nedir?","Yes, I do."
+"""Do you...?"" sorusuna verilen ""Hayır, yapmam"" anlamındaki cevap nedir?","No, I don't."
+"""Yes, I do"" ifadesinin Türkçe karşılığı nedir?","Evet, yaparım."
+"""No, I don't"" ifadesinin Türkçe karşılığı nedir?","Hayır, yapmam."
+"""At the Playground"" ifadesinin Türkçe karşılığı nedir?",Oyun Parkında
+"""Oyun Parkında"" ifadesinin İngilizce karşılığı nedir?",At the Playground
+"""Kaydırak"" üzerinde yapılan eylem: ""_____""",Slide
+"""Salıncak"" üzerinde yapılan eylem: ""_____""",Swing
+"Öneri cümlesi kurarken kullanılan ifade: ""_____ play tennis.""",Let's
+"""Do you _____?"" (Tenis oynar mısın?) boşluğunu uygun eylemle doldurunuz.",play tennis
+"""No, I _____"" (Olumsuz kısa cevap)",don't
+"""Yes, I _____"" (Olumlu kısa cevap)",do

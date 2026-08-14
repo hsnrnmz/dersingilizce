@@ -1,0 +1,316 @@
+[
+  {
+    "grade": 2,
+    "units": [
+      {
+        "no": 1,
+        "name": "Words"
+      },
+      {
+        "no": 2,
+        "name": "Friends"
+      },
+      {
+        "no": 3,
+        "name": "In the Classroom"
+      },
+      {
+        "no": 4,
+        "name": "Numbers"
+      },
+      {
+        "no": 5,
+        "name": "Colors"
+      },
+      {
+        "no": 6,
+        "name": "At the Playground"
+      },
+      {
+        "no": 7,
+        "name": "My Body"
+      },
+      {
+        "no": 8,
+        "name": "Pets"
+      },
+      {
+        "no": 9,
+        "name": "Fruit"
+      },
+      {
+        "no": 10,
+        "name": "Animals"
+      }
+    ],
+    "count": 10
+  },
+  {
+    "grade": 3,
+    "units": [
+      {
+        "no": 1,
+        "name": "Greetings"
+      },
+      {
+        "no": 2,
+        "name": "My Family"
+      },
+      {
+        "no": 3,
+        "name": "People I Love"
+      },
+      {
+        "no": 4,
+        "name": "Feelings"
+      },
+      {
+        "no": 5,
+        "name": "Toys and Games"
+      },
+      {
+        "no": 6,
+        "name": "My House"
+      },
+      {
+        "no": 7,
+        "name": "In My City"
+      },
+      {
+        "no": 8,
+        "name": "Transportation"
+      },
+      {
+        "no": 9,
+        "name": "Weather"
+      },
+      {
+        "no": 10,
+        "name": "Nature"
+      }
+    ],
+    "count": 10
+  },
+  {
+    "grade": 4,
+    "units": [
+      {
+        "no": 1,
+        "name": "Classroom Rules"
+      },
+      {
+        "no": 2,
+        "name": "Nationality"
+      },
+      {
+        "no": 3,
+        "name": "Cartoon Characters"
+      },
+      {
+        "no": 4,
+        "name": "Free Time"
+      },
+      {
+        "no": 5,
+        "name": "My Day"
+      },
+      {
+        "no": 6,
+        "name": "Fun With Science"
+      },
+      {
+        "no": 7,
+        "name": "Jobs"
+      },
+      {
+        "no": 8,
+        "name": "Life In The Universe & Future"
+      },
+      {
+        "no": 9,
+        "name": "My Friends"
+      },
+      {
+        "no": 10,
+        "name": "Food And Drinks"
+      }
+    ],
+    "count": 10
+  },
+  {
+    "grade": 5,
+    "units": [
+      {
+        "no": 1,
+        "name": "School Life"
+      },
+      {
+        "no": 2,
+        "name": "Classroom Life"
+      },
+      {
+        "no": 3,
+        "name": "Personal Life"
+      },
+      {
+        "no": 4,
+        "name": "Family Life"
+      },
+      {
+        "no": 5,
+        "name": "Life In The Neighbourhood & City"
+      },
+      {
+        "no": 6,
+        "name": "Life In The World"
+      },
+      {
+        "no": 7,
+        "name": "Life In Nature"
+      },
+      {
+        "no": 8,
+        "name": "Life In The Universe & Future"
+      }
+    ],
+    "count": 8
+  },
+  {
+    "grade": 6,
+    "units": [
+      {
+        "no": 1,
+        "name": "Life"
+      },
+      {
+        "no": 2,
+        "name": "Yummy Breakfast"
+      },
+      {
+        "no": 3,
+        "name": "Downtown"
+      },
+      {
+        "no": 4,
+        "name": "Weather And Emotions"
+      },
+      {
+        "no": 5,
+        "name": "At The Fair"
+      },
+      {
+        "no": 6,
+        "name": "Occupations"
+      },
+      {
+        "no": 7,
+        "name": "Holidays"
+      },
+      {
+        "no": 8,
+        "name": "Bookworms"
+      },
+      {
+        "no": 9,
+        "name": "Saving The Planet"
+      },
+      {
+        "no": 10,
+        "name": "Democracy"
+      }
+    ],
+    "count": 10
+  },
+  {
+    "grade": 7,
+    "units": [
+      {
+        "no": 1,
+        "name": "Appearance And Personality"
+      },
+      {
+        "no": 2,
+        "name": "Sports"
+      },
+      {
+        "no": 3,
+        "name": "Biographies"
+      },
+      {
+        "no": 4,
+        "name": "Wild Animals"
+      },
+      {
+        "no": 5,
+        "name": "Television"
+      },
+      {
+        "no": 6,
+        "name": "Celebrations"
+      },
+      {
+        "no": 7,
+        "name": "Dreams"
+      },
+      {
+        "no": 8,
+        "name": "Public Buildings"
+      },
+      {
+        "no": 9,
+        "name": "Environment"
+      },
+      {
+        "no": 10,
+        "name": "Planets"
+      }
+    ],
+    "count": 10
+  },
+  {
+    "grade": 8,
+    "units": [
+      {
+        "no": 1,
+        "name": "Friendship"
+      },
+      {
+        "no": 2,
+        "name": "Teen Life"
+      },
+      {
+        "no": 3,
+        "name": "In The Kitchen"
+      },
+      {
+        "no": 4,
+        "name": "On The Phone"
+      },
+      {
+        "no": 5,
+        "name": "The Internet"
+      },
+      {
+        "no": 6,
+        "name": "Adventures"
+      },
+      {
+        "no": 7,
+        "name": "Tourism"
+      },
+      {
+        "no": 8,
+        "name": "Chores"
+      },
+      {
+        "no": 9,
+        "name": "Science"
+      },
+      {
+        "no": 10,
+        "name": "Natural Forces"
+      }
+    ],
+    "count": 10
+  }
+]
