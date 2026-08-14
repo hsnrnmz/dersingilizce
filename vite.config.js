@@ -70,6 +70,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,svg,mp3,json,wasm}'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        navigateFallback: null,
         runtimeCaching: [
           {
             urlPattern: /\/data\/\d+\/.+\.json$/i,

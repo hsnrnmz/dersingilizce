@@ -603,6 +603,7 @@ body {
 
 .grade-card {
   appearance: none;
+  text-decoration: none;
   border: 1px solid var(--card-border);
   background: var(--card);
   color: inherit;

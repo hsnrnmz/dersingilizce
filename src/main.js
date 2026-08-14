@@ -5,9 +5,6 @@ import { renderMobileAppsSection } from './mobile-apps.js';
 
 bootSite();
 
-const toast = document.getElementById('toast');
-let toastTimer;
-
 const savedGrade = getClassGrade();
 if (savedGrade && isGradeReady(savedGrade)) {
   const main = document.querySelector('.home-shell main');
@@ -45,14 +42,6 @@ document.querySelectorAll('.grade-card').forEach((card) => {
     const grade = Number(card.dataset.grade);
     if (isGradeReady(grade)) {
       setClassGrade(grade);
-      location.href = `/sinif.html?g=${grade}`;
-      return;
     }
-    toast.textContent = `${grade}. sınıf içeriği yakında eklenecek.`;
-    toast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => {
-      toast.hidden = true;
-    }, 2200);
   });
 });
