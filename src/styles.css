@@ -6386,6 +6386,85 @@ button.build-word:focus-visible:not(:disabled) {
   font-weight: 700;
 }
 
+.kaynak-card-media {
+  margin-top: 14px;
+}
+
+.kaynak-video {
+  margin-bottom: 0;
+}
+
+.kaynak-video-empty {
+  margin: 0;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--muted);
+  font-weight: 800;
+  text-align: center;
+}
+
+.kaynak-video-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: #0f0a1a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.kaynak-video-play img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
+}
+
+.kaynak-video-play:hover img,
+.kaynak-video-play:focus-visible img {
+  opacity: 1;
+}
+
+.kaynak-video-play-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: rgba(220, 38, 38, 0.92);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.kaynak-video-play:hover .kaynak-video-play-icon,
+.kaynak-video-play:focus-visible .kaynak-video-play-icon {
+  transform: scale(1.06);
+}
+
+.kaynak-video-play-label {
+  position: absolute;
+  z-index: 1;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .kaynak-card-actions {
   display: flex;
   flex-wrap: wrap;

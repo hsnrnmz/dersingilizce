@@ -20,15 +20,45 @@ function youtubeId(raw) {
   if (!s.includes('/') && !s.includes('.')) return s;
   try {
     const uri = new URL(s);
-    if (uri.hostname.includes('youtu.be')) return uri.pathname.split('/').filter(Boolean)[0] || '';
-    if (uri.hostname.includes('youtube.com')) {
+    const host = uri.hostname.replace(/^www\./, '');
+    if (host === 'youtu.be') return uri.pathname.split('/').filter(Boolean)[0] || '';
+    if (host.endsWith('youtube.com') || host.endsWith('youtube-nocookie.com')) {
       const v = uri.searchParams.get('v');
       if (v) return v;
+      const parts = uri.pathname.split('/').filter(Boolean);
+      const i = parts.findIndex((p) => p === 'embed' || p === 'shorts' || p === 'live');
+      if (i >= 0 && parts[i + 1]) return parts[i + 1];
     }
   } catch {
     /* ignore */
   }
   return '';
+}
+
+function posterButtonHtml(yt, title) {
+  return `<button class="kaynak-video-play" type="button" data-play-yt="${escapeHtml(yt)}" aria-label="${escapeHtml(title)}">
+        <img src="https://i.ytimg.com/vi/${escapeHtml(yt)}/hqdefault.jpg" alt="" />
+        <span class="kaynak-video-play-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M8 5v14l11-7L8 5z"/></svg>
+        </span>
+        <span class="kaynak-video-play-label">Ders videosunu izle</span>
+      </button>`;
+}
+
+function videoPlayerHtml(yt, title) {
+  return `
+    <div class="kaynak-video video-wrap" data-yt="${escapeHtml(yt)}" data-title="${escapeHtml(title)}">
+      ${posterButtonHtml(yt, title)}
+    </div>`;
+}
+
+function youtubeEmbedHtml(yt) {
+  return `<iframe
+          src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(yt)}?autoplay=1&rel=0"
+          title="Ders videosu"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowfullscreen
+        ></iframe>`;
 }
 
 async function main() {
@@ -101,14 +131,14 @@ async function main() {
                   <h2>Ünite ${u.no}</h2>
                   <p>${escapeHtml(u.name)}</p>
                 </header>
-                <div class="kaynak-card-actions">
+                <div class="kaynak-card-media">
                   ${
                     yt
-                      ? `<a class="kaynak-btn is-video" href="https://www.youtube.com/watch?v=${yt}" target="_blank" rel="noopener noreferrer">
-                          <span>Ders videosu</span>
-                        </a>`
-                      : `<span class="kaynak-btn is-disabled">Video yok</span>`
+                      ? videoPlayerHtml(yt, `Ünite ${u.no}: ${u.name}`)
+                      : `<p class="kaynak-video-empty">Bu ünite için video yok.</p>`
                   }
+                </div>
+                <div class="kaynak-card-actions">
                   ${
                     pdfUrl
                       ? `<a class="kaynak-btn is-pdf" href="${escapeHtml(String(pdfUrl))}" target="_blank" rel="noopener noreferrer">
@@ -124,6 +154,21 @@ async function main() {
           .join('')}
       </section>
     `;
+
+    app.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-play-yt]');
+      if (!btn) return;
+      const wrap = btn.closest('.kaynak-video');
+      const yt = btn.getAttribute('data-play-yt');
+      if (!yt || !wrap) return;
+      app.querySelectorAll('.kaynak-video[data-yt]').forEach((other) => {
+        if (other === wrap || !other.querySelector('iframe')) return;
+        const id = other.getAttribute('data-yt');
+        const title = other.getAttribute('data-title') || 'Ders videosu';
+        if (id) other.innerHTML = posterButtonHtml(id, title);
+      });
+      wrap.innerHTML = youtubeEmbedHtml(yt);
+    });
 
     if (location.hash === '#lgs') {
       document.getElementById('lgs')?.scrollIntoView({ behavior: 'smooth' });
