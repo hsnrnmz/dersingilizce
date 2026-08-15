@@ -5928,6 +5928,8 @@ button.build-word:focus-visible:not(:disabled) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 16px;
   margin-bottom: 16px;
   padding: 16px 18px;
@@ -5947,6 +5949,7 @@ button.build-word:focus-visible:not(:disabled) {
 .yaris-prompt {
   flex: 1;
   min-width: 200px;
+  text-align: center;
   font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 900;
   line-height: 1.25;
