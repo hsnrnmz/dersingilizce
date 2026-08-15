@@ -10,8 +10,8 @@ export const SITE_OG_IMAGE = '/logo-mark.png';
 /** İletişim e-postası */
 export const SITE_EMAIL = 'kozmosoft01@gmail.com';
 
-/** Google AdSense yayıncı kimliği — onay sonrası ca-pub-XXXXXXXXXXXXXXXX ile değiştirin. */
-export const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX';
+/** Google AdSense yayıncı kimliği */
+export const ADSENSE_CLIENT = 'ca-pub-3895606274876110';
 
 /** Reklam gösterilecek statik sayfalar (etkileşimli ders ekranları hariç). */
 const AD_ALLOWED = new Set([
@@ -33,9 +33,10 @@ const AD_ALLOWED = new Set([
 ]);
 
 export function isAdsAllowedPage(pathname = location.pathname) {
-  const path = pathname.replace(/\/+$/, '') || '/';
-  if (path === '/') return true;
-  return AD_ALLOWED.has(path);
+  const path = (pathname.replace(/\/+$/, '') || '/').toLowerCase();
+  if (path === '/' || path === '/index.html') return true;
+  const asHtml = path.endsWith('.html') ? path : `${path}.html`;
+  return AD_ALLOWED.has(path) || AD_ALLOWED.has(asHtml);
 }
 
 export const COOKIE_CONSENT_KEY = 'ingilizce-cookie-consent';

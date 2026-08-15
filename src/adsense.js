@@ -9,6 +9,10 @@ function isConfigured() {
 
 function injectScript() {
   if (scriptInjected || !isConfigured()) return;
+  if (document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+    scriptInjected = true;
+    return;
+  }
   scriptInjected = true;
   const s = document.createElement('script');
   s.async = true;

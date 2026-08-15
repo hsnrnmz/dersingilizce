@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
-import { GOOGLE_SITE_VERIFICATION } from './src/site-config.js';
+import { ADSENSE_CLIENT, GOOGLE_SITE_VERIFICATION } from './src/site-config.js';
 
 const pages = [
   'index',
@@ -40,6 +40,16 @@ export default defineConfig({
         let out = html;
         if (!out.includes('theme-init.js')) {
           out = out.replace('<head>', '<head>\n    <script src="/theme-init.js"></script>');
+        }
+        if (
+          ADSENSE_CLIENT &&
+          !ADSENSE_CLIENT.includes('XXXX') &&
+          !out.includes('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+        ) {
+          out = out.replace(
+            '<head>',
+            `<head>\n    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`,
+          );
         }
         if (GOOGLE_SITE_VERIFICATION && !out.includes('google-site-verification')) {
           out = out.replace(
