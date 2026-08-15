@@ -1,5 +1,6 @@
 import { initNav } from './nav.js';
 import { isGradeReady, MODULES, GAMES, escapeHtml } from './content.js';
+import { applySeo } from './seo.js';
 import { hizliTestButtonHtml, bindHizliTestButton } from './hizli-test.js';
 import { setClassGrade } from './settings.js';
 import { renderGradeMobileBanner } from './mobile-apps.js';
@@ -16,7 +17,7 @@ const leadEl = document.getElementById('grade-lead');
 
 function main() {
   if (!isGradeReady(grade)) {
-    document.title = 'Sınıf henüz yok';
+    applySeo({ title: 'Sınıf henüz yok | Ders İngilizce' });
     kickerEl.textContent = `${grade || '?'}. Sınıf`;
     titleEl.textContent = 'İçerik henüz eklenmedi';
     leadEl.textContent = 'Şimdilik 2–8. sınıflar hazır.';
@@ -24,7 +25,10 @@ function main() {
     return;
   }
 
-  document.title = `${grade}. Sınıf — İngilizce`;
+  applySeo({
+    title: `${grade}. Sınıf İngilizce Üniteler, Test ve Quiz | Ders İngilizce`,
+    description: `${grade}. sınıf İngilizce ünite listesi, kelime testleri, quiz, dinleme etkinlikleri ve oyunlar.`,
+  });
   kickerEl.textContent = `${grade}. Sınıf`;
   titleEl.textContent = 'Ne yapmak istersin?';
   leadEl.textContent = 'Uygulamadaki gibi tüm etkinlikler burada.';

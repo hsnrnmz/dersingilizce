@@ -1,5 +1,6 @@
 import { isSoundEnabled, setSoundEnabled } from './settings.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { applySeo } from './seo.js';
 import { applyTheme, isDarkTheme, toggleTheme } from './theme.js';
 
 function themeIconMoon() {
@@ -85,6 +86,7 @@ function injectNavTools() {
 
 export function initNav() {
   applyTheme();
+  applySeo();
   initCookieConsent();
   injectNavTools();
 

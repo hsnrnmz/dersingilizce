@@ -1,4 +1,5 @@
 import { initNav } from './nav.js';
+import { applySeo } from './seo.js';
 import {
   isGradeReady,
   MODULES,
@@ -39,7 +40,10 @@ async function main() {
     MODULES.find((m) => m.id === mode) ||
     GAMES.find((g) => g.id === mode) ||
     MODULES[0];
-  document.title = `${mod.title} — ${grade}. Sınıf`;
+  applySeo({
+    title: `${grade}. Sınıf ${mod.title} | Ders İngilizce`,
+    description: `${grade}. sınıf İngilizce ${mod.title.toLowerCase()} — ünite seçin, çalışın ve tekrar edin.`,
+  });
   kickerEl.textContent = `${grade}. Sınıf`;
   titleEl.textContent = mod.title;
   leadEl.textContent =

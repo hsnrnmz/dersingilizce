@@ -1,6 +1,7 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { GOOGLE_SITE_VERIFICATION } from './src/site-config.js';
 
 const pages = [
   'index',
@@ -36,8 +37,17 @@ export default defineConfig({
     {
       name: 'inject-theme-init',
       transformIndexHtml(html) {
-        if (html.includes('theme-init.js')) return html;
-        return html.replace('<head>', '<head>\n    <script src="/theme-init.js"></script>');
+        let out = html;
+        if (!out.includes('theme-init.js')) {
+          out = out.replace('<head>', '<head>\n    <script src="/theme-init.js"></script>');
+        }
+        if (GOOGLE_SITE_VERIFICATION && !out.includes('google-site-verification')) {
+          out = out.replace(
+            '<meta charset="UTF-8" />',
+            `<meta charset="UTF-8" />\n    <meta name="google-site-verification" content="${GOOGLE_SITE_VERIFICATION}" />`,
+          );
+        }
+        return out;
       },
     },
     VitePWA({

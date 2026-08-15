@@ -5302,6 +5302,44 @@ button.build-word:focus-visible:not(:disabled) {
   gap: 20px;
 }
 
+.turnuva-shell .turnuva-stage:has(.turnuva-match) {
+  display: flex;
+  justify-content: center;
+}
+
+.turnuva-shell .turnuva-match .yaris-play {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.turnuva-shell .yaris-prompt-bar {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.turnuva-shell .yaris-prompt {
+  flex: none;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.turnuva-shell .yaris-hud {
+  justify-content: center;
+}
+
+.turnuva-shell .yaris-hud-meta {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.turnuva-shell .yaris-status {
+  text-align: center;
+}
+
 /* ---------- Turnuva ağaç fikstürü ---------- */
 .bracket-tree-wrap {
   overflow-x: auto;

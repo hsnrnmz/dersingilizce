@@ -1,6 +1,12 @@
 /** Canlı site adresi (canonical / sitemap / iletişim). */
 export const SITE_ORIGIN = 'https://dersingilizce.com';
 
+/** Search Console HTML etiketi — DNS TXT kullanıyorsanız boş bırakın. */
+export const GOOGLE_SITE_VERIFICATION = '';
+
+/** Paylaşım / Open Graph görseli */
+export const SITE_OG_IMAGE = '/logo-mark.png';
+
 /** İletişim e-postası */
 export const SITE_EMAIL = 'kozmosoft01@gmail.com';
 

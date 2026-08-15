@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 const grades = [2, 3, 4, 5, 6, 7, 8];
+const siteBase = 'https://dersingilizce.com';
 
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
@@ -126,6 +127,14 @@ function pageShell({ grade, body, title, description }) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="${escapeHtml(description)}" />
     <title>${escapeHtml(title)}</title>
+    <link rel="canonical" href="${siteBase}/rehber-${grade}.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Ders İngilizce" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:url" content="${siteBase}/rehber-${grade}.html" />
+    <meta property="og:image" content="${siteBase}/logo-mark.png" />
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -252,8 +261,9 @@ writeFileSync(resolve(root, 'public', 'data', 'rehber', 'index.json'), JSON.stri
 
 console.log('public/data/rehber/index.json');
 
-const siteBase = 'https://dersingilizce.com';
-const staticPages = [
+const lastmod = new Date().toISOString().slice(0, 10);
+const gradeModes = ['kelime', 'quiz', 'dinleme'];
+const sitemapPaths = [
   '/',
   '/hakkinda.html',
   '/iletisim.html',
@@ -262,10 +272,21 @@ const staticPages = [
   '/kaynaklar.html',
   '/rehber.html',
   ...grades.map((g) => `/rehber-${g}.html`),
+  ...grades.map((g) => `/sinif.html?g=${g}`),
+  ...grades.map((g) => `/kaynaklar.html?g=${g}`),
+  ...grades.map((g) => `/yolculuk.html?g=${g}`),
+  ...grades.flatMap((g) => gradeModes.map((mode) => `/unite.html?g=${g}&mode=${mode}`)),
 ];
+
+function sitemapLoc(path) {
+  const loc = `${siteBase}${path === '/' ? '' : path}`.replaceAll('&', '&amp;');
+  return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod></url>`;
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${staticPages.map((p) => `  <url><loc>${siteBase}${p === '/' ? '' : p}</loc></url>`).join('\n')}
-</urlset>`;
+${sitemapPaths.map(sitemapLoc).join('\n')}
+</urlset>
+`;
 writeFileSync(resolve(root, 'public', 'sitemap.xml'), sitemap);
-console.log('public/sitemap.xml');
+console.log(`public/sitemap.xml (${sitemapPaths.length} URL)`);
