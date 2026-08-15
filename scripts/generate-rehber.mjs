@@ -34,14 +34,42 @@ function unitList(uniteler) {
     .sort((a, b) => a.no - b.no);
 }
 
-function sampleWords(kelimeler, uniteNo, limit = 18) {
+function optionalJson(path) {
+  try {
+    return loadJson(path);
+  } catch {
+    return {};
+  }
+}
+
+function unitWords(kelimeler, uniteNo) {
   const node = kelimeler?.[`unite-${uniteNo}`];
   if (!node) return [];
   const list = Array.isArray(node) ? node : Object.values(node);
   return list
     .map((w) => ({ en: String(w?.en ?? '').trim(), tr: String(w?.tr ?? '').trim() }))
-    .filter((w) => w.en && w.tr)
+    .filter((w) => w.en && w.tr);
+}
+
+function unitSentences(cumleler, uniteNo, limit = 6) {
+  const node = cumleler?.[`unite-${uniteNo}`];
+  if (!Array.isArray(node)) return [];
+  return node
+    .map((s) => ({ en: String(s?.en ?? '').trim(), tr: String(s?.tr ?? '').trim() }))
+    .filter((s) => s.en && s.tr)
     .slice(0, limit);
+}
+
+function unitListening(dinleme, uniteNo) {
+  const block = dinleme?.[`unite-${uniteNo}`];
+  const pack = block?.icerikler && typeof block.icerikler === 'object' ? block.icerikler : block;
+  if (!pack || typeof pack !== 'object') return null;
+  const first = Object.values(pack).find((item) => item && typeof item === 'object' && item.metin);
+  if (!first) return null;
+  return {
+    title: String(first.baslik || '').trim(),
+    text: String(first.metin || '').trim(),
+  };
 }
 
 function countTests(testler, uniteNo) {
@@ -50,7 +78,20 @@ function countTests(testler, uniteNo) {
   return Object.keys(node).filter((k) => k.startsWith('test-')).length;
 }
 
-function buildUnitSection(grade, unit, words, testCount) {
+function topicParagraph(grade, unit, words) {
+  const highlights = words
+    .slice(0, 8)
+        .map((w) => `${escapeHtml(w.en)} (${escapeHtml(w.tr)})`)
+    .join(', ');
+  const extra = highlights
+    ? ` Öne çıkan kelimeler: ${highlights}.`
+    : '';
+  return `${grade}. sınıf İngilizce <em>${escapeHtml(unit.name)}</em> ünitesinde öğrenciler temayı günlük hayat bağlamında öğrenir.
+        Kelimeleri kart ve testlerle pekiştirir, kısa cümlelerle konuşma alıştırması yapar.${extra}
+        Derste önce kelimeleri sesli tekrar etmek, ardından örnek cümle ve dinleme metniyle kullanmak önerilir.`;
+}
+
+function buildUnitSection(grade, unit, { words, sentences, listening, testCount }) {
   const g = grade;
   const n = unit.no;
   const name = unit.name;
@@ -58,6 +99,17 @@ function buildUnitSection(grade, unit, words, testCount) {
     words.length > 0
       ? `<ul class="rehber-word-list">${words.map((w) => `<li><strong>${escapeHtml(w.en)}</strong> — ${escapeHtml(w.tr)}</li>`).join('')}</ul>`
       : '<p>Bu ünitede kelime listesi platformda etkinlik soruları üzerinden sunulur.</p>';
+  const sentenceRows =
+    sentences.length > 0
+      ? `<ul class="rehber-sentence-list">${sentences
+          .map((s) => `<li><strong>${escapeHtml(s.en)}</strong> — ${escapeHtml(s.tr)}</li>`)
+          .join('')}</ul>`
+      : '';
+  const listeningBlock = listening
+    ? `<h3>Örnek dinleme / okuma metni</h3>
+      ${listening.title ? `<p><strong>${escapeHtml(listening.title)}</strong></p>` : ''}
+      <p>${escapeHtml(listening.text)}</p>`
+    : '';
 
   const links = `
     <ul class="rehber-links">
@@ -71,28 +123,30 @@ function buildUnitSection(grade, unit, words, testCount) {
 
   return `
     <section class="rehber-unit" id="unite-${n}">
-      <h2>Ünite ${n}: ${escapeHtml(name)}</h2>
+      <h2>${g}. Sınıf İngilizce Ünite ${n}: ${escapeHtml(name)}</h2>
       <p>
-        <strong>${g}. sınıf İngilizce</strong> müfredatında <em>${escapeHtml(name)}</em> teması,
-        öğrencilerin günlük hayatta sık kullanacağı kelime ve ifadeleri pekiştirmeyi hedefler.
-        Bu rehber; ünite kapsamını, örnek kelime listesini, sınıfta nasıl çalışılacağını ve
-        platformdaki etkinlik bağlantılarını özetler.
+        <strong>${g}. sınıf İngilizce ünite ${n} kelimeleri</strong> ve konu tekrarı için hazırlanmış
+        ücretsiz rehber. <em>${escapeHtml(name)}</em> temasında kelime listesi, örnek cümleler ve
+        dinleme metni birlikte sunulur.
       </p>
       <p>
-        Ünite ${n} kapsamında yaklaşık <strong>${testCount || 'birkaç'}</strong> kelime testi,
-        görselli quiz soruları, dinleme metni ve oyun etkinlikleri bulunur. Öğretmenler tahtada
-        doğrudan etkinliği açabilir; öğrenciler ise evde tekrar için aynı üniteyi seçebilir.
-        Hesap oluşturma gerekmez; ilerleme tarayıcıda yerel olarak saklanabilir.
+        Bu ünitede yaklaşık <strong>${testCount || 'birkaç'}</strong> kelime testi, görselli quiz,
+        dinleme ve oyun etkinliği bulunur. Öğretmen tahtada açabilir; öğrenci evde tekrarlayabilir.
+        Hesap gerekmez.
       </p>
       <h3>Ünite konusu</h3>
       <p>
-        ${escapeHtml(name)} teması, ${g}. sınıf seviyesine uygun kelime dağarcığı ve basit cümle
-        yapıları sunar. Derste önce temayı tanıtmak, ardından dinleme-tekrar ve görsel destekli
-        quiz ile pekiştirmek önerilir. Kelimeleri yalnızca ezberletmek yerine kısa diyaloglar
-        veya resimli kartlarla bağlama oturtmak kalıcı öğrenmeyi artırır.
+        ${topicParagraph(g, unit, words)}
       </p>
-      <h3>Örnek kelimeler</h3>
+      <h3>${g}. sınıf ${escapeHtml(name)} kelimeleri</h3>
       ${wordRows}
+      ${
+        sentenceRows
+          ? `<h3>Örnek cümleler</h3>
+      ${sentenceRows}`
+          : ''
+      }
+      ${listeningBlock}
       <h3>Platformda neler var?</h3>
       <p>
         Bu ünite için sitede kelime kartları, çoktan seçmeli testler, görselli quiz, dinleme
@@ -223,23 +277,22 @@ const indexEntries = [];
 for (const grade of grades) {
   const dataDir = resolve(root, 'public', 'data', String(grade));
   const uniteler = loadJson(resolve(dataDir, 'uniteler.json'));
-  let kelimeler = {};
-  let testler = {};
-  try {
-    kelimeler = loadJson(resolve(dataDir, 'kelimeler.json'));
-  } catch {
-    /* optional */
-  }
-  try {
-    testler = loadJson(resolve(dataDir, 'testler.json'));
-  } catch {
-    /* optional */
-  }
+  const kelimeler = optionalJson(resolve(dataDir, 'kelimeler.json'));
+  const testler = optionalJson(resolve(dataDir, 'testler.json'));
+  const cumleler = optionalJson(resolve(dataDir, 'cumleler.json'));
+  const dinleme = optionalJson(resolve(dataDir, 'dinleme.json'));
 
   const units = unitList(uniteler);
   const toc = units.map((u) => `<li><a href="#unite-${u.no}">Ünite ${u.no}: ${escapeHtml(u.name)}</a></li>`).join('');
   const sections = units
-    .map((u) => buildUnitSection(grade, u, sampleWords(kelimeler, u.no), countTests(testler, u.no)))
+    .map((u) =>
+      buildUnitSection(grade, u, {
+        words: unitWords(kelimeler, u.no),
+        sentences: unitSentences(cumleler, u.no),
+        listening: unitListening(dinleme, u.no),
+        testCount: countTests(testler, u.no),
+      }),
+    )
     .join('\n');
 
   indexEntries.push({ grade, units, count: units.length });
@@ -248,7 +301,7 @@ for (const grade of grades) {
     grade,
     body: { toc, sections },
     title: `${grade}. Sınıf İngilizce Ünite Rehberi`,
-    description: `${grade}. sınıf İngilizce tüm üniteler: konu özeti, kelime listesi, çalışma önerileri ve etkinlik bağlantıları.`,
+    description: `${grade}. sınıf İngilizce ünite kelimeleri, konu özeti, örnek cümleler ve dinleme metinleri.`,
   });
 
   writeFileSync(resolve(root, `rehber-${grade}.html`), html, 'utf8');
