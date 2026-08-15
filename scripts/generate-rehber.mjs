@@ -240,10 +240,6 @@ function pageShell({ grade, body, title, description }) {
         </p>
       </header>
 
-      <aside class="ad-wrap ad-wrap-top" aria-label="Reklam alanı">
-        <div class="ad-slot" data-ad-format="horizontal"></div>
-      </aside>
-
       <nav class="rehber-toc" aria-label="Ünite listesi">
         <h2 class="rehber-toc-title">Bu sayfadaki üniteler</h2>
         <ol class="rehber-toc-list">

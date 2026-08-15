@@ -1,4 +1,4 @@
-﻿import { initNav } from './nav.js';
+﻿import { bootSite } from './site-boot.js';
 import {
   isGradeReady,
   MODULES,
@@ -32,7 +32,7 @@ import {
 } from './oyunlar-anim.js';
 import { adimiGec, yolculukHref } from './yolculuk-progress.js';
 
-initNav();
+bootSite();
 
 const params = new URLSearchParams(location.search);
 const grade = Number(params.get('g') || 0);

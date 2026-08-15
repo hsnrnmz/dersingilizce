@@ -48,7 +48,7 @@ export default defineConfig({
         ) {
           out = out.replace(
             '<head>',
-            `<head>\n    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`,
+            `<head>\n    <script>window.adsbygoogle=window.adsbygoogle||[];window.adsbygoogle.requestNonPersonalizedAds=1;</script>\n    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`,
           );
         }
         if (GOOGLE_SITE_VERIFICATION && !out.includes('google-site-verification')) {

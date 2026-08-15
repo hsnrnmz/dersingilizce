@@ -1,20 +1,16 @@
 import { COOKIE_CONSENT_KEY } from './site-config.js';
 
-/** @typedef {'pending'|'essential'|'all'} ConsentLevel */
+/** @typedef {'pending'|'essential'|'all'|'ack'} ConsentLevel */
 
 /** @returns {ConsentLevel|null} */
 export function getConsent() {
   try {
     const raw = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (raw === 'essential' || raw === 'all') return raw;
+    if (raw === 'essential' || raw === 'all' || raw === 'ack') return raw;
   } catch {
     /* ignore */
   }
   return null;
-}
-
-export function hasAdConsent() {
-  return getConsent() === 'all';
 }
 
 /** @param {ConsentLevel} level */
@@ -32,18 +28,15 @@ function bannerMarkup() {
   return `
     <div class="cookie-consent" id="cookie-consent" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite">
       <div class="cookie-consent-inner">
-        <p class="cookie-consent-title" id="cookie-consent-title">Çerez tercihleri</p>
+        <p class="cookie-consent-title" id="cookie-consent-title">Çerez bildirimi</p>
         <p class="cookie-consent-text">
-          Site deneyimi için zorunlu veriler cihazınızda saklanabilir. Reklam ve analiz çerezleri
-          yalnızca onay verirseniz kullanılır. Ayrıntılar
+          Ana sayfa ve diğer sayfalarda reklam gösterilebilir. Google, reklam sıklığı
+          ve ölçüm için çerez kullanabilir. Ayrıntılar
           <a href="/gizlilik.html">Gizlilik Politikası</a> sayfasındadır.
         </p>
         <div class="cookie-consent-actions">
-          <button type="button" class="cookie-btn cookie-btn-ghost" data-consent="essential">
-            Yalnızca gerekli
-          </button>
-          <button type="button" class="cookie-btn cookie-btn-primary" data-consent="all">
-            Tümünü kabul et
+          <button type="button" class="cookie-btn cookie-btn-primary" data-consent="ack">
+            Tamam
           </button>
         </div>
       </div>
@@ -58,7 +51,7 @@ export function initCookieConsent() {
   root?.querySelectorAll('[data-consent]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const level = btn.getAttribute('data-consent');
-      if (level === 'essential' || level === 'all') setConsent(level);
+      if (level === 'ack' || level === 'essential' || level === 'all') setConsent(level);
     });
   });
 }

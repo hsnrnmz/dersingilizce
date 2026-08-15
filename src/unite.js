@@ -1,4 +1,4 @@
-import { initNav } from './nav.js';
+import { bootSite } from './site-boot.js';
 import { applySeo } from './seo.js';
 import {
   isGradeReady,
@@ -13,7 +13,7 @@ import {
 import { isTestSolved, countSolvedInUnit } from './test-progress.js';
 import { hizliTestButtonHtml, bindHizliTestButton } from './hizli-test.js';
 
-initNav();
+bootSite();
 
 const params = new URLSearchParams(location.search);
 const grade = Number(params.get('g') || 0);

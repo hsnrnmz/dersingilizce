@@ -1,4 +1,4 @@
-import { initNav } from './nav.js';
+import { bootSite } from './site-boot.js';
 import { isGradeReady, loadJson, unitNamesFrom, escapeHtml } from './content.js';
 import {
   SORU_SECENEKLERI,
@@ -18,7 +18,7 @@ import {
   renderBracketTree,
 } from './turnuva-bracket.js';
 
-initNav();
+bootSite();
 
 const MIN_OGRENCI = 2;
 const MAX_OGRENCI = 40;

@@ -1,4 +1,4 @@
-import { initNav } from './nav.js';
+import { bootSite } from './site-boot.js';
 import { isGradeReady, loadJson, unitNamesFrom, escapeHtml } from './content.js';
 import {
   GECME_BARAJI,
@@ -8,7 +8,7 @@ import {
   yolculukVerisiOlustur,
 } from './yolculuk-progress.js';
 
-initNav();
+bootSite();
 
 const params = new URLSearchParams(location.search);
 const grade = Number(params.get('g') || 0);

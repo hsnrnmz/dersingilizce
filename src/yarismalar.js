@@ -1,7 +1,7 @@
-import { initNav } from './nav.js';
+import { bootSite } from './site-boot.js';
 import { isGradeReady } from './content.js';
 
-initNav();
+bootSite();
 
 const params = new URLSearchParams(location.search);
 const grade = Number(params.get('g') || params.get('grade') || 0);

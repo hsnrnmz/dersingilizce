@@ -1,10 +1,14 @@
 import { ADSENSE_CLIENT, isAdsAllowedPage } from './site-config.js';
-import { hasAdConsent } from './cookie-consent.js';
 
 let scriptInjected = false;
 
 function isConfigured() {
   return ADSENSE_CLIENT && !ADSENSE_CLIENT.includes('XXXX');
+}
+
+function ensureNonPersonalizedAds() {
+  window.adsbygoogle = window.adsbygoogle || [];
+  window.adsbygoogle.requestNonPersonalizedAds = 1;
 }
 
 function injectScript() {
@@ -22,7 +26,7 @@ function injectScript() {
 }
 
 function fillSlot(el) {
-  if (!isConfigured() || !hasAdConsent()) return;
+  if (!isConfigured()) return;
   if (el.dataset.adFilled === '1') return;
   el.dataset.adFilled = '1';
   el.innerHTML = '';
@@ -35,6 +39,7 @@ function fillSlot(el) {
   ins.dataset.fullWidthResponsive = el.dataset.fullWidthResponsive ?? 'true';
   if (el.dataset.adLayout) ins.dataset.adLayout = el.dataset.adLayout;
   el.appendChild(ins);
+  ensureNonPersonalizedAds();
   injectScript();
   try {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -49,13 +54,7 @@ export function initAdsense() {
   const slots = document.querySelectorAll('.ad-slot');
   if (!slots.length) return;
 
-  const tryFill = () => {
-    if (!hasAdConsent()) return;
-    slots.forEach(fillSlot);
-  };
-
-  tryFill();
-  window.addEventListener('cookie-consent', tryFill);
+  slots.forEach(fillSlot);
 }
 
 /** Statik sayfalara reklam alanı ekler (henüz yoksa). */

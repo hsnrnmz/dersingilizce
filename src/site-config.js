@@ -13,30 +13,9 @@ export const SITE_EMAIL = 'kozmosoft01@gmail.com';
 /** Google AdSense yayıncı kimliği */
 export const ADSENSE_CLIENT = 'ca-pub-3895606274876110';
 
-/** Reklam gösterilecek statik sayfalar (etkileşimli ders ekranları hariç). */
-const AD_ALLOWED = new Set([
-  '/',
-  '/index.html',
-  '/hakkinda.html',
-  '/iletisim.html',
-  '/gizlilik.html',
-  '/mobil.html',
-  '/kaynaklar.html',
-  '/rehber.html',
-  '/rehber-2.html',
-  '/rehber-3.html',
-  '/rehber-4.html',
-  '/rehber-5.html',
-  '/rehber-6.html',
-  '/rehber-7.html',
-  '/rehber-8.html',
-]);
-
-export function isAdsAllowedPage(pathname = location.pathname) {
-  const path = (pathname.replace(/\/+$/, '') || '/').toLowerCase();
-  if (path === '/' || path === '/index.html') return true;
-  const asHtml = path.endsWith('.html') ? path : `${path}.html`;
-  return AD_ALLOWED.has(path) || AD_ALLOWED.has(asHtml);
+/** Reklam tüm sayfalarda gösterilebilir (her sayfada bir yer). */
+export function isAdsAllowedPage() {
+  return true;
 }
 
 export const COOKIE_CONSENT_KEY = 'ingilizce-cookie-consent';

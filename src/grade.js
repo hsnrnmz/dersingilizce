@@ -1,11 +1,11 @@
-import { initNav } from './nav.js';
+import { bootSite } from './site-boot.js';
 import { isGradeReady, MODULES, GAMES, escapeHtml } from './content.js';
 import { applySeo } from './seo.js';
 import { hizliTestButtonHtml, bindHizliTestButton } from './hizli-test.js';
 import { setClassGrade } from './settings.js';
 import { renderGradeMobileBanner } from './mobile-apps.js';
 
-initNav();
+bootSite();
 
 const params = new URLSearchParams(location.search);
 const grade = Number(params.get('g') || params.get('grade') || 0);

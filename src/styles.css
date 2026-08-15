@@ -6821,6 +6821,58 @@ button.build-word:focus-visible:not(:disabled) {
   background: transparent;
 }
 
+.ad-page-foot {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px clamp(28px, 5vw, 72px) 32px;
+}
+
+.ad-rail {
+  display: none;
+}
+
+.ad-wrap-grade-mobile {
+  margin-top: 22px;
+}
+
+@media (min-width: 1280px) {
+  .grade-ad-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1540px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .grade-ad-layout .page-shell {
+    flex: 1 1 auto;
+    width: min(1100px, 100%);
+  }
+
+  .ad-rail {
+    display: block;
+    flex: 0 0 160px;
+    width: 160px;
+    margin: 12px 0 0;
+    position: sticky;
+    top: calc(var(--header-h) + 12px);
+  }
+
+  .ad-rail .ad-slot {
+    width: 160px;
+    min-height: 600px;
+  }
+
+  .ad-wrap-grade-mobile {
+    display: none !important;
+  }
+}
+
 /* ---------- Ünite rehberleri ---------- */
 .rehber-hub-grid {
   display: grid;

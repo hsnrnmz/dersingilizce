@@ -1,4 +1,4 @@
-import { initNav } from './nav.js';
+import { bootSite } from './site-boot.js';
 import { isGradeReady, loadJson, unitNamesFrom, escapeHtml } from './content.js';
 import {
   SORU_SECENEKLERI,
@@ -8,7 +8,7 @@ import {
   renderMatchScoreboard,
 } from './race-match.js';
 
-initNav();
+bootSite();
 
 const params = new URLSearchParams(location.search);
 const grade = Number(params.get('g') || params.get('grade') || 0);
