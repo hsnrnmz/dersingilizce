@@ -24,7 +24,8 @@ function upsertLink(rel, href) {
   el.href = href;
 }
 
-export function canonicalPathFromLocation(url = location) {
+export function canonicalPathFromLocation(href = location.href) {
+  const url = new URL(href, SITE_ORIGIN);
   const params = new URLSearchParams();
   for (const key of CANONICAL_KEYS) {
     const value = url.searchParams.get(key);

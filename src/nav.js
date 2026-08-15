@@ -86,7 +86,11 @@ function injectNavTools() {
 
 export function initNav() {
   applyTheme();
-  applySeo();
+  try {
+    applySeo();
+  } catch {
+    /* SEO etiketleri sayfa içeriğini engellemesin */
+  }
   initCookieConsent();
   injectNavTools();
 
