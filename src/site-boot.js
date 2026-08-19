@@ -1,4 +1,5 @@
 import { initNav } from './nav.js';
+import { mountPageAdLayout } from './ad-layout.js';
 import { initAdsense, mountAdSlot } from './adsense.js';
 
 /**
@@ -7,6 +8,7 @@ import { initAdsense, mountAdSlot } from './adsense.js';
  */
 export function bootSite(opts = {}) {
   initNav();
+  mountPageAdLayout();
   initAdsense();
   if (opts.adsTarget) {
     mountAdSlot(opts.adsTarget, { slot: opts.adSlot || '' });
